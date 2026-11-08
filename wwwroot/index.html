@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Airline Tickets — бронирование</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><div class="brand"><span class="brand-mark">✈</span><span>AIRLINE<span class="brand-light">TICKETS</span></span></div><span class="top-note">Учебный сервис бронирования</span></header>
+  <main class="shell">
+    <section class="hero"><div><p class="eyebrow">БРОНИРОВАНИЕ АВИАБИЛЕТОВ</p><h1>Выберите рейс.<br><em>Займите своё место.</em></h1><p class="hero-copy">Место удерживается на 10 минут. После подтверждения брони выпускается билет.</p></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="plane">✈</span><div class="route-dot"></div><span class="route-label">YOUR NEXT DESTINATION</span></div></section>
+    <div id="message" class="message" role="status" hidden></div>
+    <div class="layout">
+      <section class="card selection"><div class="section-heading"><span class="step">01</span><div><h2>Рейс и место</h2><p>Найдите рейс и выберите свободное место</p></div></div><label for="flight">Рейс</label><select id="flight"><option value="">Загрузка рейсов…</option></select><div id="flight-details" class="flight-details" hidden></div><div class="seat-heading"><strong>Места</strong><span><i class="dot available"></i> Свободно <i class="dot occupied"></i> Занято</span></div><div id="seats" class="seats empty">Выберите рейс, чтобы увидеть места.</div><button id="refresh" class="text-button" type="button">↻ Обновить доступность</button></section>
+      <section class="card checkout"><div class="section-heading"><span class="step">02</span><div><h2>Данные пассажира</h2><p>Для учебного проекта используйте вымышленные данные</p></div></div><form id="booking-form"><div class="form-grid"><div><label for="name">Имя</label><input id="name" required autocomplete="off" placeholder="Иван"></div><div><label for="surname">Фамилия</label><input id="surname" required autocomplete="off" placeholder="Иванов"></div></div><label for="passport">Номер документа</label><input id="passport" required autocomplete="off" placeholder="Тестовый номер"><div class="summary"><span>Выбранное место</span><strong id="selected-seat">—</strong></div><button id="book" class="primary" type="submit" disabled>Забронировать место <span>→</span></button></form><div id="reservation-panel" class="reservation-panel" hidden><div class="success-icon">✓</div><div><h3>Место забронировано</h3><p>Подтвердите бронь до <strong id="expires"></strong></p><small id="reservation-id"></small></div><button id="issue-ticket" class="secondary" type="button">Выпустить билет</button></div><div id="ticket-panel" class="ticket-panel" hidden><span class="ticket-icon">✈</span><div><strong>Билет оформлен</strong><small id="ticket-id"></small></div></div></section>
+    </div>
+    <footer>Доступность мест может измениться одновременно с вашим выбором. Окончательное решение принимает база данных при сохранении брони.</footer>
+  </main>
+</body>
+</html>
